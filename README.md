@@ -20,17 +20,45 @@ Our project tackles subcategory prediction in crime-related datasets, created fo
 Enable accurate classification of crime-related data into subcategories and category to streamline and enhance data insights and regulatory compliance.
 
 ## Project Structure
-
 ```plaintext
-├── Datasets 
-├── data_preprossesing&eda   
+├── Datasets
+│   ├── train.csv
+│   ├── test.csv
+│   └── Draft+IndiaAI+CyberGuard+AI+Hackathon_+Dataset+Usage+Guidelines.pdf
+├── data_preprossesing&eda
+│   ├── data cleaning.ipynb
+│   ├── eda_final - train.ipynb
+│   ├── eda_final - test.ipynb
+│   ├── train_preprocessing.ipynb
+│   └── test_preprocessing.ipynb
 ├── Images
+│   ├── image1.png
+│   ├── image2.png
+│   ├── image3.png
+│   ├── image4.png
+│   ├── image5.png
+│   └── image6.png
 ├── main_model_train
+│   ├── cat_pred.ipynb
+│   └── sub_xbg.ipynb
 ├── models
+│   ├── le.joblib
+│   ├── li_cat.joblib
+│   ├── log_reg_pipeline_model.joblib
+│   ├── vectorizer.joblib
+│   └── xgb_model.joblib
 ├── prediction
+│   └──prediction.ipynb
 ├── proccessed_datasets
-└── trial_model_training
-```
+│   ├── final_test_2.csv
+│   └── abbreviated_file.csv
+├── trial_model_training
+│   ├── preprocess_+_Xgboost.ipynb
+│   └── random_F.ipynb
+├── India_AI_Cyberguard_Report.pdf
+├── LICENCE
+└── README.md
+
 ## Methodology
 1. **Our Data Structure**
    ## Categories and Subcategories
