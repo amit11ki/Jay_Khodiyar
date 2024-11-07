@@ -19,6 +19,18 @@ Our project tackles subcategory prediction in crime-related datasets, created fo
 ## Objective
 Enable accurate classification of crime-related data into subcategories and category to streamline and enhance data insights and regulatory compliance.
 
+## Project Structure
+
+```plaintext
+├── Datasets 
+├── data_preprossesing&eda   
+├── Images
+├── main_model_train
+├── models
+├── prediction
+├── proccessed_datasets
+└── trial_model_training
+```
 ## Methodology
 1. **Our Data Structure**
    ## Categories and Subcategories
