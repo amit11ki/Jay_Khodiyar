@@ -22,41 +22,41 @@ Enable accurate classification of crime-related data into subcategories and cate
 ## Project Structure
 ```plaintext
 ├── Datasets
-│   ├── train.csv
-│   ├── test.csv
-│   └── Draft+IndiaAI+CyberGuard+AI+Hackathon_+Dataset+Usage+Guidelines.pdf
-├── data_preprossesing&eda
-│   ├── data cleaning.ipynb
-│   ├── eda_final - train.ipynb
-│   ├── eda_final - test.ipynb
-│   ├── train_preprocessing.ipynb
-│   └── test_preprocessing.ipynb
+│ ├── train.csv
+│ ├── test.csv
+│ └── Draft+IndiaAI+CyberGuard+AI+Hackathon_+Dataset+Usage+Guidelines.pdf
+├── data_preprocessing&eda
+│ ├── data_cleaning.ipynb
+│ ├── eda_final - train.ipynb
+│ ├── eda_final - test.ipynb
+│ ├── train_preprocessing.ipynb
+│ └── test_preprocessing.ipynb
 ├── Images
-│   ├── image1.png
-│   ├── image2.png
-│   ├── image3.png
-│   ├── image4.png
-│   ├── image5.png
-│   └── image6.png
+│ ├── category_distribution.png
+│ ├── Screenshot 2024-11-05 222313.png
+│ ├── subcategory_distribution.png
+│ ├── WhatsApp Image 2024-11-07 at 15.17.03_9da14cad.jpg
+│ ├── WhatsApp Image 2024-11-07 at 15.19.20_02f834d6.jpg
+│ └── wordcloud.png
 ├── main_model_train
-│   ├── cat_pred.ipynb
-│   └── sub_xbg.ipynb
+│ ├── cat_pred.ipynb
+│ └── sub_xbg.ipynb
 ├── models
-│   ├── le.joblib
-│   ├── li_cat.joblib
-│   ├── log_reg_pipeline_model.joblib
-│   ├── vectorizer.joblib
-│   └── xgb_model.joblib
+│ ├── le.joblib
+│ ├── le_cat.joblib
+│ ├── log_reg_pipeline_model.joblib
+│ ├── vectorizer.joblib
+│ └── xgb_model.joblib
 ├── prediction
-│   └──prediction.ipynb
-├── proccessed_datasets
-│   ├── final_test_2.csv
-│   └── abbreviated_file.csv
+│ └── prediction.ipynb
+├── processed_datasets
+│ ├── final_test_2.csv
+│ └── abbreviated_file.csv
 ├── trial_model_training
-│   ├── preprocess_+_Xgboost.ipynb
-│   └── random_F.ipynb
+│ ├── preprocess_+_Xgboost.ipynb
+│ └── random_F.ipynb
 ├── India_AI_Cyberguard_Report.pdf
-├── LICENCE
+├── LICENSE
 └── README.md
 ```
 ## Methodology
