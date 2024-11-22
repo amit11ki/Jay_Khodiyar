@@ -22,9 +22,9 @@ Enable accurate classification of crime-related data into subcategories and cate
 ## Project Structure
 ```plaintext
 ├── Datasets
-│ ├── train.csv
+│ ├── Draft+IndiaAI+CyberGuard+AI+Hackathon_+Dataset+Usage+Guidelines.pdf
 │ ├── test.csv
-│ └── Draft+IndiaAI+CyberGuard+AI+Hackathon_+Dataset+Usage+Guidelines.pdf
+│ └── train.csv
 ├── Images
 │ ├── category_distribution.png
 │ ├── Screenshot 2024-11-05 222313.png
@@ -34,7 +34,7 @@ Enable accurate classification of crime-related data into subcategories and cate
 │ └── wordcloud.png
 ├── eda
 │ ├── eda_final - train.ipynb
-│ ├── eda_final - test.ipynb
+│ ├── eda_final-test.ipynb
 │ └── eda_imbalance_data.ipynb
 ├── models
 │ ├── main model
