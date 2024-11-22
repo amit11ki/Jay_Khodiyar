@@ -3,4 +3,5 @@ proccessed_datasets/Final_text_2.csv filter=lfs diff=lfs merge=lfs -text
 proccessed_datasets/abbreviated_file.csv filter=lfs diff=lfs merge=lfs -text
 *.csv filter=lfs diff=lfs merge=lfs -text
 *.h5 filter=lfs diff=lfs merge=lfs -text
+models/main[[:space:]]model/gru_attention_model[[:space:]](1).h5 filter=lfs diff=lfs merge=lfs -text
 proccessed_datasets/Balanced1.0.csv filter=lfs diff=lfs merge=lfs -text
