@@ -1,3 +1,4 @@
 *.largefileextension filter=lfs diff=lfs merge=lfs -text
 proccessed_datasets/Final_text_2.csv filter=lfs diff=lfs merge=lfs -text
 proccessed_datasets/abbreviated_file.csv filter=lfs diff=lfs merge=lfs -text
+proccessed_datasets/Balanced1.0.csv filter=lfs diff=lfs merge=lfs -text

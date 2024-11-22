@@ -62,73 +62,90 @@ Enable accurate classification of crime-related data into subcategories and cate
 ## Methodology
 1. **Our Data Structure**
    ## Categories and Subcategories
-
 | Category                   | Subcategory                                                                                               |
 |----------------------------|----------------------------------------------------------------------------------------------------------|
-| **Other Cyber Crime**      | - Fake/Impersonating Profile <br> - Any Other Cyber Crime <br> - Cyber Bullying/Stalking/Sexting <br> - Cheating by Impersonation <br> - Unauthorized Access/Data Breach <br> - Online Job Fraud <br> - Ransomware <br> - Malware Attacks <br> - Profile Hacking/Identity Theft <br> - Provocative Speech of Unlawful Acts <br> - Attacks on applications (e.g., E-Governance, E-Commerce) <br> - Impersonating Email <br> - Data Breaches <br> - Tampering with Computer Source Documents <br> - Defacement/Hacking <br> - Online Matrimonial Fraud <br> - Email Hacking <br> - Intimidating Email <br> - Email Phishing <br> - Online Cyber Trafficking <br> - Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks <br> - Damage to Computer Systems <br> - Cyber Terrorism |
-| **Financial Fraud Crimes** | - UPI-Related Frauds <br> - Internet Banking-Related Fraud <br> - E-Wallet Related Frauds <br> - Debit/Credit Card Fraud <br> - Fraud Call/Vishing <br> - Cryptocurrency Crime <br> - Demat/Depository Fraud <br> - Online Gambling/Betting Fraud <br> - Business Email Compromise/Email Takeover |
+| **Other Cyber Crime**      | - Any Other Cyber Crime <br> - Cheating by Impersonation <br> - Cyber Bullying/Stalking/Sexting <br> - Cyber Terrorism <br> - Damage to Computer Systems <br> - Data Breaches <br> - Defacement of Websites or Unauthorized Changes <br> - Defacement/Hacking <br> - Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks <br> - Email Hacking <br> - Email Phishing <br> - Fake/Impersonating Profile <br> - Impersonating Email <br> - Intimidating Email <br> - Online Matrimonial Fraud <br> - Malicious code attacks (e.g., virus, worm, Trojan, Bots, Spyware, Ransomware, Crypto miners) <br> - Online Cyber Trafficking <br> - Online Job Fraud <br> - Profile Hacking/Identity Theft <br> - Provocative Speech of Unlawful Acts <br> - Ransomware <br> - SQL Injection <br> - Tampering with Computer Source Documents <br> - Unauthorized Access/Data Breach |
+| **Financial Fraud Crimes** | - UPI-Related Frauds <br> - Internet Banking-Related Fraud <br> - E-Wallet Related Frauds <br> - Debit/Credit Card Fraud or SIM Swap Fraud <br> - Fraud Call/Vishing <br> - Cryptocurrency Crime <br> - Demat/Depository Fraud <br> - Online Gambling/Betting Fraud <br> - Business Email Compromise/Email Takeover |
 | **Women/Child Related Crime** | - Rape/Gang Rape-Sexually Abusive Content <br> - Sale, Publishing and Transmitting Obscene Material/Sexually Explicit Material <br> - Child Pornography/Child Sexual Abuse Material (CSAM) |
 
 
+
 3. **Data Preprocessing**:
-   - Normalized, tokenized, and cleaned the text data.
-   - Used Regular Expressions (RegEx) for noise removal.
-   - Applied Exploratory Data Augmentation (EDA) for balancing.
+- NLTK: Used the Natural Language Toolkit (NLTK) for text processing, including tokenization, stopword removal, and lemmatization.
+- Normalized, Tokenized, and Cleaned Text Data: Performed text normalization, tokenization, and cleaning to ensure that the data was suitable for modeling.
+- Regular Expressions (RegEx): Applied RegEx to remove noise, such as special characters, URLs, and unnecessary punctuation.
+- Exploratory Data Augmentation (EDA): Implemented data augmentation techniques to balance the dataset and address any class imbalance.
 
-4. **Feature Engineering**:
-   - Converted text to vectors using **TF-IDF** with unigram and bigram tokens.
+4. **Data Balancing**:
+- Initial Distribution: Checked initial distribution of categories and subcategories.
+- Main Categories Balancing Oversampled categories to match the maximum count.
+- Subcategories Balancing Balanced subcategories within each main category using resampling or SMOTE.
+- Final Dataset Verified balanced distribution of both categories and subcategories.
 
-5. **Model Selection**:
-   - Chose **XGBoost** for primary classification.
+
+5. **Feature Engineering**:
+- Word Embeddings (300-Dimensional): Used pre-trained word embeddings (e.g., GloVe or Word2Vec) to convert text into dense 300-dimensional vectors, capturing 
+  rich contextual information.
+- TF-IDF: Converted text to vectors using TF-IDF with unigram and bigram tokens, capturing important terms and their relevance in the dataset.
+
+    
+6. **Model Selection**:
+   - Choose **GRU** (Gated Recurrent Unit) for primary classification.
    - Fine-tuned parameters to optimize precision, recall, and F1-score.
 
 ## Results
-The final model (XGBoost, Logistic regression) achieved:
-- **Category Accuracy**: 0.98
-- **Category F1-score**: 0.98
-- **Subcategory Accuracy**: 0.93
-- **Macro Precision**: 0.93
-- **Macro Recall**: 0.93
-- **Macro F1-score**: 0.93
-## Precision and Recall for Each Subcategory
+The final model (GRU) achieved
 
-| SUBCATEGORY | PRECISION | RECALL | F1-SCORE | SUPPORT |
-|-------------|-----------|--------|----------|---------|
-| ANY OTHER CYBER CRIME | 0.9195 | 0.7408 | 0.8205 | 43771 |
-| ATTACKS ON APPLICATIONS (E.G., E-GOVERNANCE, E-COMMERCE) | 0.9730 | 0.9774 | 0.9752 | 22055 |
-| BUSINESS EMAIL COMPROMISE/EMAIL TAKEOVER | 0.9900 | 1.0 | 0.9950 | 26514 |
-| CHEATING BY IMPERSONATION | 0.9076 | 0.7951 | 0.8476 | 21668 |
-| CHILD PORNOGRAPHY/CHILD SEXUAL ABUSE MATERIAL (CSAM) | 0.9872 | 1.0 | 0.9935 | 24471 |
-| CRYPTOCURRENCY CRIME | 0.9896 | 1.0 | 0.9947 | 26615 |
-| CYBER BULLYING/STALKING/SEXTING | 0.8959 | 0.7533 | 0.8184 | 21596 |
-| CYBER TERRORISM | 0.9980 | 1.0 | 0.9990 | 21682 |
-| DAMAGE TO COMPUTER SYSTEMS | 0.9994 | 1.0 | 0.9997 | 21633 |
-| DATA BREACHES | 0.9613 | 0.9808 | 0.9710 | 22055 |
-| DEBIT/CREDIT CARD FRAUD | 0.8248 | 0.8457 | 0.8351 | 26446 |
-| DEFACEMENT/HACKING | 0.9835 | 0.9725 | 0.9779 | 43756 |
-| DEMAT/DEPOSITORY FRAUD | 0.9513 | 0.9789 | 0.9649 | 26342 |
-| DENIAL OF SERVICE (DOS) AND DISTRIBUTED DENIAL OF SERVICE (DDOS) ATTACKS | 0.9749 | 0.9913 | 0.9831 | 22055 |
-| E-WALLET RELATED FRAUDS | 0.9085 | 0.8903 | 0.8993 | 26410 |
-| EMAIL HACKING | 0.9836 | 0.9971 | 0.9903 | 21832 |
-| EMAIL PHISHING | 0.9963 | 1.0 | 0.9981 | 21757 |
-| FAKE/IMPERSONATING PROFILE | 0.8990 | 0.8920 | 0.8955 | 21578 |
-| FRAUD CALL/VISHING | 0.7601 | 0.8004 | 0.7797 | 26353 |
-| IMPERSONATING EMAIL | 0.9999 | 1.0 | 0.9999 | 22055 |
-| INTERNET BANKING-RELATED FRAUD | 0.8484 | 0.8083 | 0.8279 | 26657 |
-| INTIMIDATING EMAIL | 1.0 | 1.0 | 1.0 | 22055 |
-| MALWARE ATTACKS | 0.9802 | 0.9902 | 0.9852 | 22055 |
-| ONLINE CYBER TRAFFICKING | 0.9933 | 1.0 | 0.9966 | 21795 |
-| ONLINE GAMBLING/BETTING FRAUD | 0.9865 | 1.0 | 0.9932 | 26441 |
-| ONLINE JOB FRAUD | 0.9111 | 0.9936 | 0.9505 | 21754 |
-| ONLINE MATRIMONIAL FRAUD | 0.9976 | 1.0 | 0.9988 | 21084 |
-| PROFILE HACKING/IDENTITY THEFT | 0.9244 | 0.9202 | 0.9223 | 21630 |
-| PROVOCATIVE SPEECH OF UNLAWFUL ACTS | 0.9825 | 0.9977 | 0.9900 | 20944 |
-| RANSOMWARE | 0.9836 | 0.9782 | 0.9809 | 44110 |
-| RAPE/GANG RAPE-SEXUALLY ABUSIVE CONTENT | 0.9995 | 0.9976 | 0.9985 | 24791 |
-| SALE, PUBLISHING AND TRANSMITTING OBSCENE MATERIAL/SEXUALLY EXPLICIT MATERIAL | 0.7954 | 0.9357 | 0.8599 | 49017 |
-| TAMPERING WITH COMPUTER SOURCE DOCUMENTS | 0.9857 | 0.9716 | 0.9786 | 22055 |
-| UPI-RELATED FRAUDS | 0.7242 | 0.7130 | 0.7186 | 26370 |
-| UNAUTHORIZED ACCESS/DATA BREACH | 0.9214 | 0.9813 | 0.9504 | 21614 |
+ **Classification Report Precision and Recall for Each Subcategory**
+
+| **SUBCATEGORY** | **PRECISION** | **RECALL** | **F1-SCORE** | **SUPPORT** |
+|-----------------|---------------|------------|--------------|-------------|
+| Any Other Cyber Crime | 0.9099 | 0.8296 | 0.8679 | 4103 |
+| Business Email Compromise/Email Takeover | 0.9987 | 1.0000 | 0.9993 | 4589 |
+| Cheating by Impersonation | 0.9759 | 0.9910 | 0.9834 | 4006 |
+| Child Pornography/Child Sexual Abuse Material (CSAM) | 0.9971 | 0.9947 | 0.9959 | 8897 |
+| Cryptocurrency Crime | 0.9970 | 1.0000 | 0.9985 | 4597 |
+| Cyber Bullying/Stalking/Sexting | 0.9787 | 0.9764 | 0.9775 | 3946 |
+| Cyber Terrorism | 0.9951 | 1.0000 | 0.9975 | 4032 |
+| Damage to Computer Systems | 1.0000 | 1.0000 | 1.0000 | 3920 |
+| Data Breaches | 1.0000 | 1.0000 | 1.0000 | 4062 |
+| Debit/Credit Card Fraud or SIM Swap Fraud | 0.9400 | 0.9453 | 0.9426 | 4659 |
+| Defacement of Websites or Unauthorized Changes | 1.0000 | 1.0000 | 1.0000 | 3866 |
+| Defacement/Hacking | 1.0000 | 1.0000 | 1.0000 | 4108 |
+| Demat/Depository Fraud | 0.9793 | 1.0000 | 0.9896 | 4504 |
+| Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks | 1.0000 | 1.0000 | 1.0000 | 4072 |
+| E-Wallet Related Frauds | 0.9704 | 0.9799 | 0.9751 | 4717 |
+| Email Hacking | 0.9432 | 1.0000 | 0.9707 | 4048 |
+| Email Phishing | 0.9990 | 0.9977 | 0.9983 | 3861 |
+| Fake/Impersonating Profile | 0.9785 | 0.9924 | 0.9854 | 3938 |
+| Fraud Call/Vishing | 0.9520 | 0.9701 | 0.9610 | 4683 |
+| Impersonating Email | 1.0000 | 1.0000 | 1.0000 | 4141 |
+| Internet Banking-Related Fraud | 0.9354 | 0.9505 | 0.9429 | 4648 |
+| Intimidating Email | 1.0000 | 1.0000 | 1.0000 | 3968 |
+| Malicious code attacks (e.g., virus, worm, Trojan, Bots, Spyware, Ransomware, Crypto miners) | 1.0000 | 1.0000 | 1.0000 | 4039 |
+| Online Cyber Trafficking | 0.9985 | 0.9980 | 0.9983 | 4028 |
+| Online Gambling/Betting Fraud | 0.9968 | 0.9917 | 0.9943 | 4716 |
+| Online Job Fraud | 0.9869 | 0.9995 | 0.9931 | 3980 |
+| Online Matrimonial Fraud | 0.9969 | 1.0000 | 0.9985 | 3870 |
+| Profile Hacking/Identity Theft | 0.9886 | 0.9881 | 0.9884 | 3953 |
+| Provocative Speech of Unlawful Acts | 0.9966 | 0.9964 | 0.9965 | 3846 |
+| Ransomware | 0.9998 | 1.0000 | 0.9999 | 4147 |
+| Rape/Gang Rape-Sexually Abusive Content | 0.9999 | 1.0000 | 0.9999 | 8772 |
+| SQL Injection | 1.0000 | 1.0000 | 1.0000 | 3948 |
+| Sale, Publishing and Transmitting Obscene Material/Sexually Explicit Material | 0.9870 | 0.9951 | 0.9910 | 8773 |
+| Tampering with Computer Source Documents | 1.0000 | 1.0000 | 1.0000 | 4067 |
+| UPI-Related Frauds | 0.9179 | 0.8289 | 0.8711 | 4762 |
+| Unauthorized Access/Data Breach | 0.9886 | 0.9931 | 0.9908 | 3921 |
+
+### Accuracy
+- **Accuracy**: 0.9840
+
+### Macro Average
+- **Macro avg**: Precision: 0.9835, Recall: 0.9838, F1-Score: 0.9835
+
+### Weighted Average
+- **Weighted avg**: Precision: 0.9838, Recall: 0.9840
+
 
 ---
 
@@ -158,6 +175,6 @@ The model has the potential to enhance the National Cyber Crime Reporting Portal
 
 ## References
 - Data Processing: NumPy, pandas, Scikit-learn, NLTK, Imblearn
-- Model Training: XGBoost, LogisticRegression ,Random Forest
+- Model Training: XGBoost, LogisticRegression ,Random Forest,GRU (Gated Recurrent Unit)
 - Data Balancing: Scikit-learn Resampling
 - EDA: Matplotlib, Seaborn
