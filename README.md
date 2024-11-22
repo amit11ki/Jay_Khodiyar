@@ -170,6 +170,6 @@ The model has the potential to enhance the National Cyber Crime Reporting Portal
 
 ## References
 - Data Processing: NumPy, pandas, Scikit-learn, NLTK, Imblearn
-- Model Training: __**GRU (Gated Recurrent Unit)**__, XGBoost, LogisticRegression ,Random Forest
+- Model Training: **__GRU (Gated Recurrent Unit)__**, XGBoost, LogisticRegression ,Random Forest
 - Data Balancing: Scikit-learn Resampling
 - EDA: Matplotlib, Seaborn
