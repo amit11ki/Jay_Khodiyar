@@ -93,6 +93,8 @@ Enable accurate classification of crime-related data into subcategories and cate
    - Choose **GRU** (Gated Recurrent Unit) for primary classification.
    - Fine-tuned parameters to optimize precision, recall, and F1-score.
 
+---
+
 ## Results
 The final model (GRU) achieved
 
@@ -149,18 +151,6 @@ The final model (GRU) achieved
 
 ---
 
-## Category Results
-
-| CATEGORY                    | PRECISION | RECALL | F1-SCORE | SUPPORT |
-|-----------------------------|-----------|--------|----------|---------|
-| FINANCIAL FRAUD CRIMES      | 0.98      | 0.98   | 0.98     | 47,530  |
-| OTHER CYBER CRIME           | 0.99      | 0.99   | 0.99     | 113,173 |
-| WOMEN/CHILD RELATED CRIME   | 0.98      | 0.97   | 0.98     | 19,901  |
-| **ACCURACY**                |           |        | **0.98** | 180,604 |
-| **MACRO AVG**               | 0.98      | 0.98   | 0.98     | 180,604 |
-| **WEIGHTED AVG**            | 0.98      | 0.98   | 0.98     | 180,604 |
-
- 
 ## Challenges Faced
 1. **Messy Text**: Managed inconsistencies, typos, and informal language.
 2. **Data Imbalance**: Used sampling techniques to improve model fairness across classes.
